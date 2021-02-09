@@ -39,9 +39,9 @@ public class CoordinatesDbHelper extends SQLiteOpenHelper {
                 null, null, null);
         cursor.moveToFirst();
         while(!cursor.isAfterLast()) {
-            LatLng l = new LatLng((double) cursor.getDouble(
-                    cursor.getColumnIndex(DbSchema.Tab.LATITUDE)), (double)
-                            cursor.getDouble(cursor.getColumnIndex(DbSchema.Tab.LONGITUDE)));
+            LatLng l = new LatLng(cursor.getDouble(
+                    cursor.getColumnIndex(DbSchema.Tab.LATITUDE)),
+                    cursor.getDouble(cursor.getColumnIndex(DbSchema.Tab.LONGITUDE)));
             locations.add(l);
             cursor.moveToNext();
         }

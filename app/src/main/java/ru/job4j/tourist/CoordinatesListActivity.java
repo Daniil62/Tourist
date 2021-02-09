@@ -1,6 +1,7 @@
 package ru.job4j.tourist;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,18 +57,26 @@ public class CoordinatesListActivity extends AppCompatActivity {
             LatLng latLng = coordinates.get(position);
             TextView latitudeText = holder.itemView.findViewById(R.id.latitude_textView);
             TextView longitudeText = holder.itemView.findViewById(R.id.longitude_textView);
+            View item = holder.itemView;
             double latitude = latLng.latitude;
             double longitude = latLng.longitude;
             latitudeText.setText(String.valueOf(latitude));
             longitudeText.setText(String.valueOf(longitude));
-            holder.itemView.setId(position);
-            holder.itemView.setOnClickListener(v -> {
-                Intent intent = new Intent(CoordinatesListActivity.this,
-                        MapsActivity.class);
-                intent.putExtra("latitude", latitude);
-                intent.putExtra("longitude", longitude);
-                startActivity(intent);
-            });
+            item.setId(position);
+            itemPainter(item, position);
+            item.setOnClickListener(v -> onItemClick(latitude, longitude));
+        }
+        private void itemPainter(View view, int numb) {
+            if (numb % 2 == 0) {
+                view.setBackgroundColor(Color.parseColor("#CCDDCC"));
+            }
+        }
+        private void onItemClick(double latitude, double longitude) {
+            Intent intent = new Intent(CoordinatesListActivity.this,
+                    MapsActivity.class);
+            intent.putExtra("latitude", latitude);
+            intent.putExtra("longitude", longitude);
+            startActivity(intent);
         }
         @Override
         public int getItemCount() {

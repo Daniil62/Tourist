@@ -25,7 +25,7 @@
 
         <Button
             android:id="@+id/current_location_button"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/location"
@@ -35,8 +35,18 @@
             android:id="@+id/to_location_list_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/list"
             tools:ignore="ButtonStyle" />
+
+        <ImageButton
+            android:id="@+id/places_imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/quantum_ic_search_grey600_24"
+            tools:ignore="ContentDescription" />
+
     </LinearLayout>
 
 </LinearLayout>

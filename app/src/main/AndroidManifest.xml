@@ -38,6 +38,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CoordinatesListActivity" />
+        <activity android:name=".PlacesActivity" />
     </application>
 
 </manifest>
