@@ -40,7 +40,6 @@ public class PlacesActivity extends AppCompatActivity implements OnMapReadyCallb
                         map.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, 15));
                     }
                 }
-
                 @Override
                 public void onError(@NonNull Status status) {
                     Log.i("onError", status.toString());

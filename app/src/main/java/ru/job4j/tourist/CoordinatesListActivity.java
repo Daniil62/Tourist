@@ -62,9 +62,9 @@ public class CoordinatesListActivity extends AppCompatActivity {
             double longitude = latLng.longitude;
             latitudeText.setText(String.valueOf(latitude));
             longitudeText.setText(String.valueOf(longitude));
-            item.setId(position);
+            holder.itemView.setId(position);
             itemPainter(item, position);
-            item.setOnClickListener(v -> onItemClick(latitude, longitude));
+            holder.itemView.setOnClickListener(v -> onItemClick(latitude, longitude));
         }
         private void itemPainter(View view, int numb) {
             if (numb % 2 == 0) {

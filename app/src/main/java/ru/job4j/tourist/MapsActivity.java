@@ -57,6 +57,13 @@ public class MapsActivity extends FragmentActivity
         finish();
         super.onBackPressed();
     }
+    private void setMapFragment() {
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
+    }
     private void permissionMaster() {
         String[] permissions = {COARSE_LOCATION, FINE_LOCATION};
         boolean locPermissions = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
@@ -64,19 +71,17 @@ public class MapsActivity extends FragmentActivity
                 PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, FINE_LOCATION) ==
                 PackageManager.PERMISSION_GRANTED;
-        if (locPermissions) {
+        if (!locPermissions) {
             ActivityCompat.requestPermissions(this, permissions, 14);
+        } else {
+            setMapFragment();
         }
     }
     @Override
     public void onRequestPermissionsResult(
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == 14) {
-            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                    .findFragmentById(R.id.map);
-            if (mapFragment != null) {
-                mapFragment.getMapAsync(this);
-            }
+            setMapFragment();
         }
     }
     private void getCurrentLocation() {
@@ -97,7 +102,7 @@ public class MapsActivity extends FragmentActivity
         if (latitude != 0 && longitude != 0) {
             LatLng latLng = new LatLng(latitude, longitude);
             map.addMarker(new MarkerOptions().position(latLng).title("location"));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18));
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
         }
     }
     @SuppressLint("MissingPermission")

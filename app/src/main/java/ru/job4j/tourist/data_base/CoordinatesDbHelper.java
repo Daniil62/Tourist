@@ -25,12 +25,32 @@ public class CoordinatesDbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
+    private boolean isSameCoordinates(LatLng latLng) {
+        boolean result = false;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(DbSchema.NAME, null, null, null,
+                null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            if (cursor.getDouble(cursor.getColumnIndex(DbSchema.Tab.LATITUDE)) == latLng.latitude
+                    && cursor.getDouble(cursor.getColumnIndex(DbSchema.Tab.LONGITUDE))
+                            == latLng.longitude) {
+                result = true;
+                break;
+            }
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return result;
+    }
     public void loadLocation(LatLng latLng) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(DbSchema.Tab.LATITUDE, latLng.latitude);
-        values.put(DbSchema.Tab.LONGITUDE, latLng.longitude);
-        db.insert(DbSchema.NAME, null, values);
+        if (!isSameCoordinates(latLng)) {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(DbSchema.Tab.LATITUDE, latLng.latitude);
+            values.put(DbSchema.Tab.LONGITUDE, latLng.longitude);
+            db.insert(DbSchema.NAME, null, values);
+        }
     }
     public List<LatLng> getLocations() {
         SQLiteDatabase db = this.getReadableDatabase();
