@@ -1,8 +1,10 @@
-package ru.job4j.tourist;
+package ru.job4j.tourist.masters;
 
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+
+import ru.job4j.tourist.interfaces.LocationListenerInterface;
 
 public class LocationListenerMaster implements LocationListener {
     private LocationListenerInterface locationListenerInterface;

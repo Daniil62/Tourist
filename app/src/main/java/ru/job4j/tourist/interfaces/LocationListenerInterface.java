@@ -1,4 +1,4 @@
-package ru.job4j.tourist;
+package ru.job4j.tourist.interfaces;
 
 import android.location.Location;
 

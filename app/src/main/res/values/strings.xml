@@ -1,6 +1,26 @@
 <resources>
-    <string name="app_name">Tourist</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="location">Location</string>
-    <string name="list">List</string>
+    <string name="app_name">Турист</string>
+    <string name="title_activity_maps">Карта</string>
+    <string name="measurements">Измерения</string>
+    <string name="point_manager">Менеджер точек</string>
+    <string name="track_manager">Менеджер треков</string>
+    <string name="search_place">Поиск мест</string>
+    <string name="menu">Меню</string>
+    <string name="save_path">Сохранить путь</string>
+    <string name="save_location">Сохранить \nточку</string>
+    <string name="start">Начать</string>
+    <string name="stop">Остановить</string>
+    <string name="look_on_map">Посмотреть на карте</string>
+    <string name="rename">Переименовать</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_place">Удалить точку?</string>
+    <string name="delete_track">Удалить трек?</string>
+    <string name="distance_to_purpose">Дистанция до цели:</string>
+    <string name="traveled_distance">Пройденный путь:</string>
+    <string name="speed">Скорость:</string>
+    <string name="latitude">Широта:</string>
+    <string name="longitude">Долгота:</string>
+    <string name="altitude">Высота:</string>
+    <string name="km">Км</string>
+    <string name="speed_km_h">Км/ч</string>
 </resources>

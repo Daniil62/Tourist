@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,40 +13,31 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3"
-        tools:context=".MapsActivity" />
+        tools:context=".activitys.MapsActivity" />
+
+    <ImageButton
+        android:id="@+id/hide_show_panel_imageButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_alignParentBottom="true">
 
-        <Button
-            android:id="@+id/current_location_button"
-            android:layout_width="wrap_content"
+        <ru.job4j.tourist.masters.ControlPanelMaster
+            android:id="@+id/control_panel"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/location"
-            tools:ignore="ButtonStyle,NestedWeights" />
-
-        <Button
-            android:id="@+id/to_location_list_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/list"
-            tools:ignore="ButtonStyle" />
-
-        <ImageButton
-            android:id="@+id/places_imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/quantum_ic_search_grey600_24"
-            tools:ignore="ContentDescription" />
-
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:visibility="gone"/>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

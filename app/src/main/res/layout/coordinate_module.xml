@@ -7,16 +7,10 @@
     android:layout_margin="7dp">
 
     <TextView
-        android:id="@+id/latitude_textView"
+        android:id="@+id/place_info_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textSize="20sp"/>
+        android:padding="15dp"
+        android:textSize="25sp"/>
 
-    <TextView
-        android:id="@+id/longitude_textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textSize="20sp"/>
 </LinearLayout>

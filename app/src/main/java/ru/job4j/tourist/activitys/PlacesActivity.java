@@ -1,4 +1,4 @@
-package ru.job4j.tourist;
+package ru.job4j.tourist.activitys;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -16,16 +16,17 @@ import java.util.Arrays;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import ru.job4j.tourist.data_base.CoordinatesDbHelper;
+import ru.job4j.tourist.R;
+//import ru.job4j.tourist.data_base.CoordinatesDbHelper;
 
 public class PlacesActivity extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap map;
-    private CoordinatesDbHelper helper;
+ //   private CoordinatesDbHelper helper;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_places);
-        this.helper = new CoordinatesDbHelper(this);
+ //       this.helper = new CoordinatesDbHelper(this);
         Places.initialize(this, getString(R.string.google_maps_key));
         AutocompleteSupportFragment search = (AutocompleteSupportFragment)
                 getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment);
@@ -37,7 +38,7 @@ public class PlacesActivity extends AppCompatActivity implements OnMapReadyCallb
                 public void onPlaceSelected(@NonNull Place place) {
                     LatLng pos = place.getLatLng();
                     if (pos != null) {
-                        helper.loadLocation(pos);
+        //                helper.loadLocation(pos);
                         MarkerOptions markerOptions =
                                 new MarkerOptions().position(pos).title("Hello Maps");
                         map.addMarker(markerOptions);

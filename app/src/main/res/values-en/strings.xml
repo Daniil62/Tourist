@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tourist</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="measurements">Measurements</string>
+    <string name="point_manager">Point manager</string>
+    <string name="track_manager">Track manager</string>
+    <string name="search_place">Search place</string>
+    <string name="menu">Menu</string>
+    <string name="save_path">Save track</string>
+    <string name="save_location">Save location</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="look_on_map">Look on map</string>
+    <string name="rename">Rename</string>
+    <string name="delete">Delete</string>
+    <string name="delete_place">Delete place?</string>
+    <string name="delete_track">Delete track?</string>
+    <string name="distance_to_purpose">Distance to purpose:</string>
+    <string name="traveled_distance">Traveled distance:</string>
+    <string name="speed">Speed:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="altitude">Altitude:</string>
+    <string name="km">Km</string>
+    <string name="speed_km_h">Km/h</string>
+</resources>
